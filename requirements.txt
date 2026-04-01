@@ -1,0 +1,23 @@
+# --- Backend Server ---
+fastapi>=0.100.0
+uvicorn[standard]>=0.20.0
+python-multipart>=0.0.6
+
+# --- OCR Engine ---
+# note: choosing a stable version for docTR
+python-doctr[torch]>=0.8.0
+
+# --- PyTorch (for OCR) ---
+# users might need to install specific CUDA version manually, 
+# but this is the general requirement
+torch>=2.0.0
+torchvision
+
+# --- Image Processing ---
+opencv-python-headless>=4.8.0
+Pillow>=10.0.0
+
+# --- Testing / Dev ---
+requests
+matplotlib
+pytest

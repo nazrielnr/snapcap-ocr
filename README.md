@@ -44,45 +44,38 @@ snapcap-ocr/
 - Node.js 18+
 - (Opsional) GPU NVIDIA + CUDA 12.1 untuk performa OCR lebih cepat
 
-### 1. Setup & Jalankan Backend
+### 1. Setup & Instalasi
+Buka terminal (PowerShell) dan jalankan:
 
 ```powershell
 # Clone repo
 git clone https://github.com/nazrielnr/snapcap-ocr.git
 cd snapcap-ocr
 
-# Setup virtual environment & install dependencies
+# Setup Backend (Buat virtual env & install dependencies via requirements.txt)
 .\setup_env.ps1
 
-# Jalankan backend (port 8000)
+# Setup Frontend (Install library React/Vite)
+cd snapcap-pwa
+npm install
+cd ..
+```
+
+> **Catatan:** File model `.pt` (±100 MB) tidak disertakan di repo karena ukurannya besar. Pastikan `doctr_det_model.pt` dan `doctr_rec_model.pt` sudah diletakkan di dalam folder root `snapcap-ocr` sebelum menjalankan server.
+
+### 2. Menjalankan Aplikasi (Backend + Frontend)
+
+Gunakan script `run.ps1` untuk menyalakan FastAPI & React Frontend secara bersamaan:
+
+```powershell
 .\run.ps1
 ```
 
-Backend akan berjalan di: `http://localhost:8000`
+Script ini akan otomatis membuka 2 terminal baru:
+1. **Backend** berjalan di `http://localhost:8000`
+2. **Frontend** berjalan di `http://localhost:5173`
 
-> **Catatan:** File model `.pt` (±100 MB) tidak diinclude di repo karena ukurannya besar. Download terpisah atau hubungi tim.
-
-### 2. Setup & Jalankan Frontend
-
-```bash
-cd snapcap-pwa
-
-# Install dependencies
-npm install
-
-# Jalankan dev server (port 5173)
-npm run dev
-```
-
-Frontend akan berjalan di: `http://localhost:5173`
-
-### 3. Build Frontend (Production)
-
-```bash
-cd snapcap-pwa
-npm run build
-# Output di snapcap-pwa/dist/ (di-gitignore)
-```
+*(Catatan: Atau Anda dapat klik kanan pada file `run.ps1` -> "Run with PowerShell" di Windows Explorer)*
 
 ---
 

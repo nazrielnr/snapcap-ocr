@@ -11,5 +11,5 @@ python -m pip install --upgrade pip
 # 4. Install PyTorch (with CUDA 12.1 for your RTX 4060)
 python -m pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
 
-# 5. Install DocTR and other dependencies
-python -m pip install "python-doctr[torch]" opencv-python-headless Pillow
+# 5. Install dependencies from requirements.txt
+python -m pip install -r requirements.txt

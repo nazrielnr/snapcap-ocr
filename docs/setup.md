@@ -68,25 +68,7 @@ Letakkan kedua file di folder root project (sejajar dengan `server.py`).
 
 ---
 
-## 3. Jalankan Backend
-
-```powershell
-# Aktifkan venv jika belum
-.\.venv\Scripts\Activate.ps1
-
-# Jalankan server
-.\run.ps1
-# atau
-python server.py
-```
-
-Server berjalan di `http://localhost:8000`
-
-Cek status: `http://localhost:8000/api/health`
-
----
-
-## 4. Setup Frontend (React + Vite)
+## 3. Setup Frontend (React + Vite)
 
 ```bash
 cd snapcap-pwa
@@ -94,18 +76,27 @@ cd snapcap-pwa
 # Install dependencies
 npm install
 
-# Jalankan dev server
-npm run dev
-```
-
-Frontend berjalan di `http://localhost:5173`
-
-### Build Production
-
-```bash
+# Build untuk Production (Bila perlu)
 npm run build
-# Output → snapcap-pwa/dist/
+cd ..
 ```
+
+---
+
+## 4. Menjalankan Aplikasi
+
+Anda sekarang bisa menjalankan backend dan frontend sekaligus menggunakan script:
+
+```powershell
+.\run.ps1
+```
+
+Script ini akan otomatis membuka 2 terminal baru:
+1. Terminal Backend (berjalan di `http://localhost:8000`)
+2. Terminal Frontend (berjalan di `http://localhost:5173`)
+
+Cek status Backend: `http://localhost:8000/api/health`
+Buka Frontend: `http://localhost:5173`
 
 ---
 
