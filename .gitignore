@@ -1,0 +1,93 @@
+# ============================================================
+#  SnapCap OCR – Root .gitignore
+# ============================================================
+
+# ------ Python / Backend ------
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+.Python
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.env
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+*.egg
+.eggs/
+
+# Pytest / testing
+.pytest_cache/
+.cache/
+*.coverage
+.coverage
+htmlcov/
+
+# Type checking
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Jupyter Notebooks (checkpoints only — keep .ipynb in git)
+.ipynb_checkpoints/
+
+# Logs / temp files
+*.log
+api_test.txt
+*.tmp
+*.temp
+tmp/
+
+# OS-generated
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ------ ML Model weights (large binary files) ------
+# Exclude compiled/trained model files
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.onnx
+*.pkl
+*.h5
+
+# ------ Backend build / dist output ------
+# (if you ever package the Python backend)
+backend/dist/
+backend/build/
+
+# ------ Frontend (snapcap-pwa / Vite + React) ------
+# node_modules and build output are excluded via snapcap-pwa/.gitignore
+# but also listed here as safety net:
+snapcap-pwa/node_modules/
+snapcap-pwa/dist/
+snapcap-pwa/dist-ssr/
+
+# Frontend local env files
+snapcap-pwa/.env
+snapcap-pwa/.env.local
+snapcap-pwa/.env.development.local
+snapcap-pwa/.env.test.local
+snapcap-pwa/.env.production.local
+
+# Editor / IDE
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Windows specific
+ehthumbs.db
